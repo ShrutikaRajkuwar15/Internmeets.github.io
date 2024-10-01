@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+    /* background-color: rgb(234, 233, 238); */
+}
+header{
+    background-color: rgb(81, 69, 253);
+}
+.header-section{
+    background-color: rgb(81, 69, 253);
+    padding: 1rem;
+    /* position: sticky top;  */
+     position: fixed; 
+     z-index: 1000;
+     transition: box-shadow 0.3s ease-in-out;
+    }
+.header-section-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+.header-section li{
+    color:white;
+}
+.menu-wrapper{
+    background-color: rgb(81, 69, 253);
+   
+}
+.slider-area{
+    background-color: rgb(81, 69, 253);
+    padding-bottom: 8rem;
+    position: relative;
+
+}
+.animated-text .heading{
+    margin-top: 10rem;
+}
+nav{
+    list-style-type: none;
+    height:5%; 
+    font-weight: bold;
+    margin-top: 0;
+    transition: box-shadow 0.3s ease-in-out;
+
+    }
+
+nav li {
+    display: inline-block;
+    color:white;
+    text-align: center;
+    margin-left: 2rem;
+
+}
+nav li a{
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    font-weight: bold;
+}
+nav li a:hover{
+    text-decoration: underline;
+}
+/* #active{
+   background-color: antiquewhite;
+} */
+.header-right-btn .border-btn{
+    color: white;
+    border: 1px ridge ;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    /* margin-left: 1rem; */
+    margin-right: 1rem;
+    width: 60px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    /* background: linear-gradient(to bottom, #007BFF, #007BFF); Blue color */
+   
+    transition: background 0.4s ease;
+}
+.header-right-btn .border-btn:hover{
+    background: linear-gradient(to bottom, white, white);
+    color: rgb(81, 69, 253);
+
+}
+
+  /* Shape divider code */
+  .custom-shape-divider-bottom-1724068538 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1724068538 svg {
+    position: relative;
+    display: block;
+    width: calc(108% + 1.3px);
+    height: 112px;
+}
+
+.custom-shape-divider-bottom-1724068538 .shape-fill {
+    fill: #FFFFFF;
+}
+/* Shape divider code end */
+
+/* Text animation start  */
+.text-animation{
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    /* margin-top: 150px; */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animated-text{
+    justify-content: center;
+    align-items: center;
+    
+}
+.text-container {
+    overflow: hidden;
+    max-width: 50%; /* Adjust to control the maximum width of the text area */
+    white-space: pre-wrap; /* Allows wrapping of text */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    from { border-right-color: #61dafb; }
+    to { border-right-color: transparent; }
+}
+.typing-effect {
+    display: inline-block;
+    width: 100%;
+    animation: blink 0.75s step-end infinite alternate;
+}
+.character {
+    opacity: 0;
+    animation: fade-in 0.1s forwards;
+}
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* text animation end */
+
+button{
+    background-color: rgb(41, 41, 213);
+    border: none;
+    padding: 15px;
+    text-decoration: none !important;
+    color: rgb(244, 241, 241);
+}
+button:hover{
+    background-color: rgb(55, 55, 186);
+}
+.header-p{
+    color: rgb(244, 241, 241);
+    font-size: 1.2rem;
+}
+h2{
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+/* College icon slidder css start */
+.slider-container {
+    width: 1000px; /*5 images * 110px (100px image + 10px margin)// */
+    overflow: hidden;
+    /* border: 2px solid #ddd;
+    border-radius: 10px; */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 60px;
+}
+/* College icon slidder end start */
+.college-section{
+    margin-top:3rem;
+}
+.section-tittle{
+    margin-top: 2rem;
+}
+/* On button hover the msg disply below */
+.ButtonMsg{
+    width: 100px;
+    border-radius: 30px 0 30px 0;
+    padding: 10px;
+    background-color: rgb(41, 171, 61);
+    border-style: none;
+    margin: auto;
+}
+.ButtonMsg:hover{
+    background-color: rgb(28, 119, 42);
+   
+}
+.hidden-Paragraph{
+    color: rgb(46, 46, 46);
+    width: 800px;
+    /* border-style: groove; */
+    background-color: rgb(209, 209, 209);
+    /* border-style: 5px solid rgb(29, 29, 29) ; */
+    border-radius: 0 20px 0 20px;
+    border-color: rgb(36, 36, 36) 1px;
+    display: none;
+    /* margin-top: 10px; */
+    /* color: #333; */
+    /* font-size: 16px; */
+    margin-top: 10px;
+    padding: 2rem;
+    
+    }
+.internship-card, .training-modules {
+    margin-top: 50px;
+    margin: 20px;
+}
+.internship-card  .card,.training-modules .card{
+    padding: 30px;
+    background-color: aliceblue;
+    justify-content: center;
+    margin: 10px;
+    height: 400px;
+
+}
+.internship-card .card-img-top, .training-modules .card-img-top{
+    width: 5rem;
+    height: 5rem;
+    background-color: rgb(254, 254, 254);
+    padding: 10px;
+    justify-content: center;
+    border-radius: 50%;  /* Makes the container round */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+}
+.internship-card button .training-modules button{
+    margin-top: 50px;
+}
+.Class-Training-Info img{
+    height: 25rem;
+    width: 25rem;
+}
+.Class-Training-Info h2{
+    font-weight: 500;
+}
+.Class-Training-Info h5{
+    color: rgb(98, 97, 97);
+    text-align: justify;
+}
+.joined-interns .card {
+    width: 20rem;
+    height: 10rem;
+    background-color:#b7e6f3;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border: none;
+    margin-right: 10px;
+}
+.Top-jobs .card{
+    margin-right: 30px !important;
+    background-color:#ecf2f4;
+
+}
+.Top-jobs img{
+    width: 50px;
+    height: 50px;
+}
+.job-post{
+    margin-top: 8rem;
+}
+.job-post .single-features {
+    display: flex;
+    padding: 3rem;
+    color: #FFFFFF;
+    border-radius: 10px;
+    height: 300px;
+}
+.job-post .single-features .features-caption {
+    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+.job-post .single-features h3{
+    font-weight: bold;
+}
+.job-post .single-features .border-btn{
+    border-radius: 10px ;
+    border: 2px solid #FFFFFF ;
+    /* border-style: groove; */
+    text-decoration: none;
+    padding: 0.8rem;
+    width: 100px;
+    color: #FFFFFF;
+}
+.job-post .single-features .job-banner .features-caption{
+    flex: 1; 
+    /* padding: 10px */
+}
+.job-post  .banner1{
+    background-color: rgb(79, 161, 79);
+}
+.job-post  .banner2{
+    background-color: rgb(91, 121, 229);
+}
+.feedback-Training-Info{
+margin: 3rem;
+}
+.wants-wrapper{
+    width: 1000px;
+    /* position: absolute; */
+    background-color: rgb(236, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    z-index: 1;
+    padding: 50px;
+}
+
+footer{
+    margin-top: 3rem;
+    background-color: aliceblue;
+    padding: 3rem;
+    justify-content: space-evenly;
+    padding-bottom: 5rem;
+}
+footer p{
+    color: grey;
+}
+.footer-social {
+    margin-top: 5rem;
+   
+}
+.footer-social a{
+    border:2px solid rgb(66, 66, 251);
+    border-radius: 50px;  
+    padding: 15px;
+    width: 25px;
+    margin:10px;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-wrapper {
+    text-align: center;
+    justify-content: center;
+}
+.footer-wrapper .footer-tittle li {
+    list-style: none;
+    text-decoration: none;   
+}
+.footer-wrapper .footer-tittle li a {
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+ 
+}
+.footer-pera .text-center ,.footer-wrapper p ,.footer-wrapper a, .footer-wrapper h4{
+    color: #3f3f3f;
+    line-height: 3;
+}
+/* Navbar dropdown effect */
+.sticky {
+    position: fixed;
+    top: -60px; /* Start hidden above the viewport */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Dropdown animation */
+.sticky.show {
+    top: 0; /* Slide down into view */
+}

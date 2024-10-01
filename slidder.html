@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.slider-container {
+    width: 550px; /* 5 images * 110px (100px image + 10px margin) */
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+    </div>
+    <script>
+        let slider = document.getElementById('slider');
+let images = slider.getElementsByTagName('img');
+let totalImages = images.length;
+let currentIndex = 0;
+let interval;
+
+function slideImages() {
+    currentIndex++;
+
+    // Apply the transition to slide the images
+    slider.style.transition = 'transform 0.5s ease-in-out';
+    slider.style.transform = `translateX(-${currentIndex * 110}px)`;
+
+    // When the slider has moved past the last image, reset it
+    if (currentIndex === totalImages - 4) { // 4 to keep 5 images visible
+        setTimeout(() => {
+            // Reset to start position but keep the visual order
+            slider.style.transition = 'none';
+            slider.style.transform = 'translateX(0)';
+
+            // Move the first image to the end of the slider
+            slider.appendChild(images[0]);
+
+            // Reset index to maintain the loop
+            currentIndex = 0;
+        }, 500); // Match this with the transition duration
+    }
+}
+
+// Start the sliding
+function startSlider() {
+    interval = setInterval(slideImages, 2000);
+}
+
+// Stop the sliding
+function stopSlider() {
+    clearInterval(interval);
+}
+
+// Event listeners for hover
+slider.addEventListener('mouseenter', stopSlider);
+slider.addEventListener('mouseleave', startSlider);
+
+// Initialize the slider
+startSlider();
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

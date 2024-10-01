@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+.text-container {
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #61dafb;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from { border-right-color: #61dafb; }
+    to { border-right-color: transparent; }
+}
+
+.typing-effect {
+    display: inline-block;
+    width: 0;
+    animation: typing 2s steps(40, end) forwards, blink 0.75s step-end infinite alternate;
+}
+
+</style>
+<body>
+
+<div class="text-container">
+    <span id="typing-text"></span>
+</div>
+
+<!-- Hidden container for input lines -->
+<div id="lines-container" style="display: none;">
+    <p>Welcome to the site!</p>
+    <p>This is a typing <br>animation.</p>
+    <p>Each line appears one<br> after another.</p>
+    <p>Enjoy coding!</p>
+    <p>Goodbye!</p>
+</div>
+<script>
+    let lines = [];
+const typingSpeed = 100; // Adjust typing speed here (milliseconds)
+const pauseBetweenLines = 1000; // Pause between lines (milliseconds)
+let lineIndex = 0;
+let charIndex = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Get the lines from the hidden HTML container
+    const linesContainer = document.getElementById("lines-container");
+    lines = Array.from(linesContainer.getElementsByTagName("p")).map(p => p.textContent);
+
+    typeLine();
+});
+
+function typeLine() {
+    const textElement = document.getElementById("typing-text");
+
+    if (charIndex < lines[lineIndex].length) {
+        textElement.innerHTML += lines[lineIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLine, typingSpeed);
+    } else {
+        charIndex = 0;
+        lineIndex++;
+        if (lineIndex >= lines.length) {
+            lineIndex = 0; // Reset lineIndex to loop infinitely
+        }
+        setTimeout(() => {
+            textElement.innerHTML = ''; // Clear the current text
+            typeLine();
+        }, pauseBetweenLines);
+    }
+}
+
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
